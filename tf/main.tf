@@ -6,7 +6,15 @@ terraform {
     }
     random = {
         source = "hashicorp/random"
-        version = "2.3.0"
+        version = "~>3.0"
+    }
+    azapi = {
+      source  = "azure/azapi"
+      version = "~>1.5"
+    }
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~>3.0.2"
     }
   }
 }
@@ -19,6 +27,9 @@ output "rid" {
     value = random_id.res_id.hex
 }
 
+/*
+GCP IaS
+*/
 provider "google" {
   project = var.project
   region  = var.region
@@ -65,3 +76,7 @@ resource "google_app_engine_application" "ts-appengine-app" {
 output "ip" {
     value = google_compute_instance.vm_instance.network_interface.0.network_ip
 }
+
+
+
+

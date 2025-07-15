@@ -1,11 +1,11 @@
 variable "project" {
-    default = "mock-ehr"
+  default = "mock-ehr"
 }
 
 variable "region" {
-    default = "us-east1"
+  default = "us-east1"
 }
 
 variable "zone" {
-    default = "us-east1-d"
+  default = "us-east1-d"
 }
